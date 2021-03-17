@@ -1,0 +1,21 @@
+.sign-in{
+    width: 427px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    text-align: center;
+
+    .titleContainer {
+       
+        .title {
+            margin: 15px 0;
+            padding: 0.5rem;  
+        }
+      
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        
+    }
+}
