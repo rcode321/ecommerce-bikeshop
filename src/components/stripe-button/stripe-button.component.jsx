@@ -15,7 +15,7 @@ const StripeCheckoutButton = ({ price }) => {
       label="Pay Now"
       name="Bikes2000 Ltd"
       billingAddress
-      image="https://res.cloudinary.com/dlkrofont/image/upload/v1616135870/Bikes2000._di6zaq.svg"
+      image="https://res.cloudinary.com/dlkrofont/image/upload/v1616139750/Group_6_davehn.png"
       description={`Your total is $${price}`}
       amount={priceForStripe}
       panelLabel="Pay Now"
