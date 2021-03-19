@@ -1,42 +1,42 @@
 const INITIAL_STATE = {
   sections: [
     {
-      title: "MOUNTAIN BIKES",
+      title: "mountainbikes",
       imageUrl:
         "https://res.cloudinary.com/dlkrofont/image/upload/v1615636896/MT-Bike/Bike-Brands_jw3mob.jpg",
       id: 1,
-      linkUrl: "MountainBikes",
+      linkUrl: "shop/mountainbikes",
     },
 
     {
-      title: "FOLDING BIKES",
+      title: "foldingbikes",
       imageUrl:
         "https://res.cloudinary.com/dlkrofont/image/upload/v1615637006/Folding-Bike/158079148_2837247746593864_4640089681913904497_n_ps4wgm.jpg",
       id: 2,
-      linkUrl: "",
+      linkUrl: "shop/foldingbikes",
     },
     {
-      title: "E-BIKES",
+      title: "ebikes",
       imageUrl:
         "https://res.cloudinary.com/dlkrofont/image/upload/v1615636943/E-Bike/HTB17NdNlnnI8KJjSszgq6A8ApXa4_xtduvh.jpg",
       id: 3,
-      linkUrl: "",
+      linkUrl: "shop/ebikes",
     },
     {
-      title: "BMX",
+      title: "bmx",
       imageUrl:
         "https://res.cloudinary.com/dlkrofont/image/upload/v1615636829/BMX/framed-impact-18-kids-bmx-bike-black-yellow-20_qxzif5.webp",
       size: "large",
       id: 4,
-      linkUrl: "",
+      linkUrl: "shop/bmx",
     },
     {
-      title: "ROAD BIKES",
+      title: "roadbikes",
       imageUrl:
         "https://res.cloudinary.com/dlkrofont/image/upload/v1615636970/Road-Bike/35218_q9r2gk.jpg",
       size: "large",
       id: 5,
-      linkUrl: "",
+      linkUrl: "shop/roadbikes",
     },
   ],
 };

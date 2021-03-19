@@ -1,8 +1,8 @@
-const SHOP_DATA = [
-  {
+const SHOP_DATA = {
+  mountainbikes: {
     id: 1,
     title: "MountainBikes",
-    routeName: "hats",
+    routeName: "mountainbikes",
     items: [
       {
         id: 1,
@@ -94,10 +94,10 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  foldingbikes: {
     id: 2,
     title: "FoldingBikes",
-    routeName: "sneakers",
+    routeName: "foldingbikes",
     items: [
       {
         id: 12,
@@ -173,10 +173,10 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  ebikes: {
     id: 3,
-    title: "E-Bikes",
-    routeName: "jackets",
+    title: "EBikes",
+    routeName: "ebikes",
     items: [
       {
         id: 21,
@@ -244,10 +244,10 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  bmx: {
     id: 4,
     title: "BMX",
-    routeName: "womens",
+    routeName: "bmx",
     items: [
       {
         id: 29,
@@ -307,10 +307,10 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  roadbikes: {
     id: 5,
     title: "RoadBikes",
-    routeName: "mens",
+    routeName: "roadbikes",
     items: [
       {
         id: 36,
@@ -410,6 +410,6 @@ const SHOP_DATA = [
       },
     ],
   },
-];
+};
 
 export default SHOP_DATA;

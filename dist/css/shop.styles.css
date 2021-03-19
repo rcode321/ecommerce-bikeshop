@@ -1,0 +1,50 @@
+.shop-page {
+  text-align: center;
+  position: relative;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.shop-page .shopPageContainerTitle {
+  position: relative;
+  background-color: black;
+  top: 12px;
+  width: 100%;
+  color: #ebebec;
+  text-shadow: 2px 3px rgba(53, 53, 53, 0.842);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1;
+}
+
+.shop-page .shopPageContainerTitle .shopPageTitle {
+  margin: 0;
+  font-size: 5rem;
+  padding-top: 1rem;
+}
+
+.shop-page .shopPageContainerTitle .shopPageSubtitle {
+  padding-bottom: 1rem;
+  margin: 0;
+}
+
+.shop-page .shopPageContainer {
+  position: relative;
+}
+
+.shop-page .shopPageContainer .shopBanner {
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.shop-page .shopPageContainer .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0.6;
+}
+/*# sourceMappingURL=shop.styles.css.map */

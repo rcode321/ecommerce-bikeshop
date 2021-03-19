@@ -1,0 +1,29 @@
+.hero-container {
+  text-align: center;
+  position: relative;
+  background-color: black;
+}
+
+.hero-container .HeadingTitleContainer {
+  position: absolute;
+  top: 200px;
+  color: white;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero-container .HeadingTitleContainer .headingTitle {
+  text-transform: uppercase;
+  font-size: 4rem;
+  text-align: center;
+  margin: 0;
+}
+
+.hero-container .heroImage {
+  width: 90%;
+  max-width: 950px;
+  background-size: cover;
+  color: transparent;
+  opacity: 0.9;
+}
+/*# sourceMappingURL=hero.styles.css.map */

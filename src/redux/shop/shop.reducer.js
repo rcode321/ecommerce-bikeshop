@@ -4,11 +4,11 @@ const INITIAL_STATE = {
   collections: SHOP_DATA,
 };
 
-const shoReducer = (state = INITIAL_STATE, action) => {
+const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-export default shoReducer;
+export default shopReducer;

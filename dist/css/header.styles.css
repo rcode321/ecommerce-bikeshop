@@ -1,0 +1,33 @@
+.header {
+  max-width: 940px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.header .logo-container {
+  display: block;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .options {
+  display: flex;
+  position: relative;
+}
+
+.header .option {
+  padding: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.header .option:hover {
+  color: #f95738;
+  transition: 0.6s;
+  cursor: pointer;
+}
+/*# sourceMappingURL=header.styles.css.map */
