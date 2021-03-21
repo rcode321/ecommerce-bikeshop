@@ -38,6 +38,44 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+// get the whole snapshot
+export const convertCollectionSnapshotToMap = (collections) => {
+  const transormedCollection = collections.docs.map((doc) => {
+    const { title, items } = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items,
+    };
+  });
+  // console.log(transormedCollection);
+  return transormedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
+};
+
+// utils for adding item/element/documents in future in firebase/firestore
+// and call *addCollectionAndDocuments* somewhere in our wheree you have access shopdata, bring selector as well.
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
+  const collectionRef = firestore.collection(collectionKey);
+  // console.log(collectionRef);
+
+  const batch = firestore.batch();
+  objectsToAdd.forEach((obj) => {
+    const newDocRef = collectionRef.doc();
+
+    batch.set(newDocRef, obj);
+  });
+
+  return await batch.commit();
+};
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
