@@ -10,9 +10,19 @@ import {
   firestore,
   convertCollectionSnapshotToMap,
 } from "../../firebabse/firebase.utils";
+
+import WithSpinner from "../../components/with-spinner/with-spinner.component";
+
 import "./shop.styles.scss";
 
+const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
+const CollectionPageWithSpinner = WithSpinner(CollectionPage);
+
 class ShopPage extends React.Component {
+  state = {
+    loading: true,
+  };
+
   unsubscribeFromSnapshot = null;
 
   componentDidMount() {
@@ -21,6 +31,8 @@ class ShopPage extends React.Component {
     collectionRef.onSnapshot(async (snapshot) => {
       const collectionMap = convertCollectionSnapshotToMap(snapshot);
       updateCollections(collectionMap);
+
+      this.setState({ loading: false });
       // console.log(collectionMap);
       // console.log(snapshot);
     });
@@ -28,6 +40,7 @@ class ShopPage extends React.Component {
 
   render() {
     const { match } = this.props;
+    const { loading } = this.state;
     return (
       <div className="shop-page">
         <div className="shopPageContainerTitle">
@@ -40,10 +53,18 @@ class ShopPage extends React.Component {
           <div className="overlay"></div>
           <img className="shopBanner" src={shopBanner} alt="shopBanner" />
         </div>
-        <Route exact path={`${match.path}`} component={CollectionsOverview} />
+        <Route
+          exact
+          path={`${match.path}`}
+          render={(props) => (
+            <CollectionsOverviewWithSpinner isLoading={loading} {...props} />
+          )}
+        />
         <Route
           path={`${match.path}/:collectionId`}
-          component={CollectionPage}
+          render={(props) => (
+            <CollectionPageWithSpinner isLoading={loading} {...props} />
+          )}
         />
       </div>
     );
