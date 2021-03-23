@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 
 import { connect } from "react-redux";
@@ -10,41 +10,35 @@ import shopBanner from "../../assets/yomex-owo-GAN9zxqj5f4-unsplash.jpg";
 
 import "./shop.styles.scss";
 
-class ShopPage extends React.Component {
-  componentDidMount() {
-    const { fetchCollectionsStart } = this.props;
-
+const ShopPage = ({ fetchCollectionsStart, match }) => {
+  useEffect(() => {
     fetchCollectionsStart();
-  }
+  }, [fetchCollectionsStart]);
 
-  render() {
-    const { match } = this.props;
-
-    return (
-      <div className="shop-page">
-        <div className="shopPageContainerTitle">
-          <h1 className="shopPageTitle">SHOP NOW</h1>
-          <p className="shopPageSubtitle">
-            Featuring our latest collections and releases.
-          </p>
-        </div>
-        <div className="shopPageContainer">
-          <div className="overlay"></div>
-          <img className="shopBanner" src={shopBanner} alt="shopBanner" />
-        </div>
-        <Route
-          exact
-          path={`${match.path}`}
-          component={CollectionsOverviewContainer}
-        />
-        <Route
-          path={`${match.path}/:collectionId`}
-          component={CollectionPageContainer}
-        />
+  return (
+    <div className="shop-page">
+      <div className="shopPageContainerTitle">
+        <h1 className="shopPageTitle">SHOP NOW</h1>
+        <p className="shopPageSubtitle">
+          Featuring our latest collections and releases.
+        </p>
       </div>
-    );
-  }
-}
+      <div className="shopPageContainer">
+        <div className="overlay"></div>
+        <img className="shopBanner" src={shopBanner} alt="shopBanner" />
+      </div>
+      <Route
+        exact
+        path={`${match.path}`}
+        component={CollectionsOverviewContainer}
+      />
+      <Route
+        path={`${match.path}/:collectionId`}
+        component={CollectionPageContainer}
+      />
+    </div>
+  );
+};
 
 const mapDispatchToProps = (dispatch) => ({
   fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
